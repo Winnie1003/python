@@ -56,7 +56,21 @@ while True:
             print ("没有找到要删除的名片！")
 
     elif num == 3:
-        pass
+        modify_name = raw_input("请输入要修改的名片")
+        for temp in business:
+            if modify_name == temp['name']:
+                redefine_name = raw_input("请输入新的姓名：")
+                redefine_wechat = raw_input("请输入新的微信：")
+                redefine_qq = raw_input("请输入新的qq:")
+                redefine_addr = raw_input("请输入新的地址：")
+
+                #将新的名片覆盖之前的名片
+                temp['name'] = redefine_name
+                temp['wechat'] = redefine_wechat
+                temp['qq'] = redefine_qq
+                temp['addr'] = redefine_addr
+            else:
+                print ("没有找到要修改的名片！")
 
     elif num == 4:
         flag = 0 #定义一个变量，表示没找到
