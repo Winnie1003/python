@@ -42,11 +42,22 @@ while True:
 
         #将一个字典添加到列表当中
         business.append(card_infos)
-        print business
+        # print business  #for test
+
     elif num == 2:
-        pass
+        flag = 0 #定义一个变量，默认表示没有找到
+        del_name = raw_input("请输入要删除的名片")
+        for temp in business:
+            if del_name == temp['name']:
+                business.remove(temp)
+                flag = 1
+                # print business  #for test
+        if flag == 0:
+            print ("没有找到要删除的名片！")
+
     elif num == 3:
         pass
+
     elif num == 4:
         flag = 0 #定义一个变量，表示没找到
         find_name = raw_input("请输入您要查找的名片：")
@@ -57,12 +68,15 @@ while True:
                 break
         if flag == 0:
             print ("没有所要查找的名片！")
+
     elif num == 5:
         print ("姓名\t微信\tqq\t地址")
         for temp in business:
             print ("%s\t%s\t%s\t%s"%(temp['name'],temp['wechat'],temp['qq'],temp['addr']))
+
     elif num == 6:
         break
+
     else:
         print ("您的输入有误，请输入正确的编号!")
 
